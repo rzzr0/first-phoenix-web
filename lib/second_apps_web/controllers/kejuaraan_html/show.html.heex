@@ -1,0 +1,17 @@
+<.header>
+  Kejuaraan <%= @kejuaraan.id %>
+  <:subtitle>This is a kejuaraan record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/kejuaraans/#{@kejuaraan}/edit"}>
+      <.button>Edit kejuaraan</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Cabor"><%= @kejuaraan.cabor %></:item>
+  <:item title="Sub cabor"><%= @kejuaraan.sub_cabor %></:item>
+  <:item title="Kontingen"><%= @kejuaraan.kontingen %></:item>
+</.list>
+
+<.back navigate={~p"/kejuaraans"}>Back to kejuaraans</.back>

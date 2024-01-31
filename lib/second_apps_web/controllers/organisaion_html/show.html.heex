@@ -1,0 +1,18 @@
+<.header>
+  Organisaion <%= @organisaion.id %>
+  <:subtitle>This is a organisaion record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/org/#{@organisaion}/edit"}>
+      <.button>Edit organisaion</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Nama organisasi"><%= @organisaion.nama_organisasi %></:item>
+  <:item title="Jabatan"><%= @organisaion.jabatan %></:item>
+  <:item title="Rincian"><%= @organisaion.rincian %></:item>
+  <:item title="Pengalaman"><%= @organisaion.pengalaman %></:item>
+</.list>
+
+<.back navigate={~p"/org"}>Back to org</.back>

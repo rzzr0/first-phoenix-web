@@ -1,0 +1,16 @@
+<.header>
+  Hobbie <%= @hobbie.id %>
+  <:subtitle>This is a hobbie record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/hobbies/#{@hobbie}/edit"}>
+      <.button>Edit hobbie</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Hobi1"><%= @hobbie.hobi1 %></:item>
+  <:item title="Hobi lain"><%= @hobbie.hobi_lain %></:item>
+</.list>
+
+<.back navigate={~p"/hobbies"}>Back to hobbies</.back>

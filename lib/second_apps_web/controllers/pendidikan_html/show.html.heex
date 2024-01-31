@@ -1,0 +1,15 @@
+<.header>
+  Pendidikan <%= @pendidikan.id %>
+  <:subtitle>This is a pendidikan record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/pendidikans/#{@pendidikan}/edit"}>
+      <.button>Edit pendidikan</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Sekolah"><%= @pendidikan.sekolah %></:item>
+</.list>
+
+<.back navigate={~p"/pendidikans"}>Back to pendidikans</.back>

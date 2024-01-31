@@ -1,0 +1,11 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:cabor]} type="text" label="Cabor" />
+  <.input field={f[:sub_cabor]} type="text" label="Sub cabor" />
+  <.input field={f[:kontingen]} type="text" label="Kontingen" />
+  <:actions>
+    <.button>Save Kejuaraan</.button>
+  </:actions>
+</.simple_form>

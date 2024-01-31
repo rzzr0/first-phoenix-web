@@ -1,0 +1,26 @@
+<.header>
+  Listing Org
+  <:actions>
+    <.link href={~p"/org/new"}>
+      <.button>New Organisaion</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="org" rows={@org} row_click={&JS.navigate(~p"/org/#{&1}")}>
+  <:col :let={organisaion} label="Nama organisasi"><%= organisaion.nama_organisasi %></:col>
+  <:col :let={organisaion} label="Jabatan"><%= organisaion.jabatan %></:col>
+  <:col :let={organisaion} label="Rincian"><%= organisaion.rincian %></:col>
+  <:col :let={organisaion} label="Pengalaman"><%= organisaion.pengalaman %></:col>
+  <:action :let={organisaion}>
+    <div class="sr-only">
+      <.link navigate={~p"/org/#{organisaion}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/org/#{organisaion}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={organisaion}>
+    <.link href={~p"/org/#{organisaion}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

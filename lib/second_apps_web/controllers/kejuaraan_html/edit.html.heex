@@ -1,0 +1,8 @@
+<.header>
+  Edit Kejuaraan <%= @kejuaraan.id %>
+  <:subtitle>Use this form to manage kejuaraan records in your database.</:subtitle>
+</.header>
+
+<.kejuaraan_form changeset={@changeset} action={~p"/kejuaraans/#{@kejuaraan}"} />
+
+<.back navigate={~p"/kejuaraans"}>Back to kejuaraans</.back>

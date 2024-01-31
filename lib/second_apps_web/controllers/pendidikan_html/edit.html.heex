@@ -1,0 +1,8 @@
+<.header>
+  Edit Pendidikan <%= @pendidikan.id %>
+  <:subtitle>Use this form to manage pendidikan records in your database.</:subtitle>
+</.header>
+
+<.pendidikan_form changeset={@changeset} action={~p"/pendidikans/#{@pendidikan}"} />
+
+<.back navigate={~p"/pendidikans"}>Back to pendidikans</.back>

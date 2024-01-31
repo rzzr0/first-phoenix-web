@@ -1,0 +1,25 @@
+<.header>
+  Listing Kejuaraans
+  <:actions>
+    <.link href={~p"/kejuaraans/new"}>
+      <.button>New Kejuaraan</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="kejuaraans" rows={@kejuaraans} row_click={&JS.navigate(~p"/kejuaraans/#{&1}")}>
+  <:col :let={kejuaraan} label="Cabor"><%= kejuaraan.cabor %></:col>
+  <:col :let={kejuaraan} label="Sub cabor"><%= kejuaraan.sub_cabor %></:col>
+  <:col :let={kejuaraan} label="Kontingen"><%= kejuaraan.kontingen %></:col>
+  <:action :let={kejuaraan}>
+    <div class="sr-only">
+      <.link navigate={~p"/kejuaraans/#{kejuaraan}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/kejuaraans/#{kejuaraan}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={kejuaraan}>
+    <.link href={~p"/kejuaraans/#{kejuaraan}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

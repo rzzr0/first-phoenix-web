@@ -1,0 +1,23 @@
+<.header>
+  Listing Pendidikans
+  <:actions>
+    <.link href={~p"/pendidikans/new"}>
+      <.button>New Pendidikan</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="pendidikans" rows={@pendidikans} row_click={&JS.navigate(~p"/pendidikans/#{&1}")}>
+  <:col :let={pendidikan} label="Sekolah"><%= pendidikan.sekolah %></:col>
+  <:action :let={pendidikan}>
+    <div class="sr-only">
+      <.link navigate={~p"/pendidikans/#{pendidikan}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/pendidikans/#{pendidikan}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={pendidikan}>
+    <.link href={~p"/pendidikans/#{pendidikan}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

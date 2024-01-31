@@ -1,0 +1,24 @@
+<.header>
+  Listing Hobbies
+  <:actions>
+    <.link href={~p"/hobbies/new"}>
+      <.button>New Hobbie</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="hobbies" rows={@hobbies} row_click={&JS.navigate(~p"/hobbies/#{&1}")}>
+  <:col :let={hobbie} label="Hobi1"><%= hobbie.hobi1 %></:col>
+  <:col :let={hobbie} label="Hobi lain"><%= hobbie.hobi_lain %></:col>
+  <:action :let={hobbie}>
+    <div class="sr-only">
+      <.link navigate={~p"/hobbies/#{hobbie}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/hobbies/#{hobbie}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={hobbie}>
+    <.link href={~p"/hobbies/#{hobbie}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

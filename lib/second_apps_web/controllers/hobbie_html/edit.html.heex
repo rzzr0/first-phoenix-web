@@ -1,0 +1,8 @@
+<.header>
+  Edit Hobbie <%= @hobbie.id %>
+  <:subtitle>Use this form to manage hobbie records in your database.</:subtitle>
+</.header>
+
+<.hobbie_form changeset={@changeset} action={~p"/hobbies/#{@hobbie}"} />
+
+<.back navigate={~p"/hobbies"}>Back to hobbies</.back>
