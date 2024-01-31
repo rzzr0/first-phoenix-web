@@ -1,4 +1,4 @@
-# SecondApps
+# FirstApps
 
 To start your Phoenix server:
 
